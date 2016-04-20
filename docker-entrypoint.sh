@@ -2,7 +2,7 @@
 
 TIMESTAMP=`date --utc +%Y%m%d_%H%M%SZ`
 
-PGPASSWORD="$DB_PASSWORD" pg_dump -u $DB_USERNAME -p $DB_PORT -d $DB_NAME -h $DB_HOST > $TIMESTAMP.dump
+PGPASSWORD="$DB_PASSWORD" pg_dump -U $DB_USERNAME -p $DB_PORT -d $DB_NAME -h $DB_HOST > $TIMESTAMP.dump
 RESULT=$?
 if [ ${RESULT} -ne 0 ]; then
     echo "Pg_dump failed, exiting..."

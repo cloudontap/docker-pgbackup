@@ -3,7 +3,7 @@ FROM debian:jessie
 RUN apt-get update && apt-get install -y --no-install-recommends \
         postgresql-client curl less groff jq python python-pip \
         && rm -rf /var/lib/apt/lists/* \
-	&& apt-get clean -y
+	&& apt-get clean -y \
         && pip install --upgrade awscli s3cmd \
         && mkdir /root/.aws
 
